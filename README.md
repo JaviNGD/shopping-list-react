@@ -1,6 +1,6 @@
-# To do List App
+# Shopping List App
 
-To do List app developed in React.
+Shopping List app developed in React.
 
 ## Getting Started with Create React App
 
