@@ -1,25 +1,19 @@
 import './App.css';
-import { ToDoCreate } from './components/ToDoCreate/ToDoCreate';
-import { ToDoCounter } from './components/ToDoCounter/ToDoCounter';
-import { ToDoSearch } from './components/ToDoSearch/ToDoSearch';
-import { ToDoList } from './components/ToDoList/ToDoList';
-import { ToDoItem } from './components/ToDoItem/ToDoItem';
-import { ToDoEdit } from './components/ToDoEdit/ToDoEdit';
-import { ToDoDelete } from './components/ToDoDelete/ToDoDelete';
+import { Navbar } from './components/Navbar/Navbar';
+import { Panel1 } from './components/Panel1/Panel1';
+import { Panel2 } from './components/Panel2/Panel2';
 
 function App() {
   return (
-    <div className="App">
-      <ToDoCreate />
-      <ToDoCounter />
-      <ToDoSearch />
-      <ToDoList>
-        <ToDoItem />
-      </ToDoList>
-      <ToDoEdit />
-      <ToDoDelete />
+    <div className="App"> 
+      <Navbar />
+        <div className='Panels'>
+          <Panel1 />
+          <Panel2 />
+        </div>
     </div>
   );
+  
 }
 
 export default App;

@@ -1,0 +1,46 @@
+.create {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5%;
+}
+
+.create input {
+    font-size: 1em;
+    border: 1px solid #d1d3d4;
+    padding: 0.8em 0.5em;
+    color: #111111;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.create input:focus {
+    outline: none;
+    border-color: #0b87ff;
+}
+
+.create select {
+    font-size: 1em;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.create select:focus {
+    border-color: #0b87ff;
+}
+
+.create button {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #5292ec;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    padding: 0.8em 1.5em;
+}

@@ -1,0 +1,28 @@
+.search input{
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    border: 1px solid #d1d3d4;
+    padding: 0.8em 0.5em;
+    color: #111111;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.search input:focus {
+    outline: none;
+    border-color: #0b87ff;
+}
+
+.search button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    background-color: #5292ec;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    padding: 0.8em 1.5em;
+    margin-left: 10px;
+}
