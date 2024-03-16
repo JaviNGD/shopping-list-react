@@ -5,7 +5,7 @@ import { Item } from '../Item/Item';
 import { Search } from '../Search/Search';
 import { Filter } from '../Filter/Filter';
 
-// Define a default list of to-dos
+// Define a default shopping list
 const defaultList = [
     {text: 'Milk', category: 'Dairy', completed: true},
     {text: 'Eggs', category: 'Dairy', completed: false},
@@ -16,6 +16,7 @@ const defaultList = [
 ]
 
 export default function Panel2() {
+
 
     // Group the items by category
     const groupedItems = defaultList.reduce((acc, item) => {

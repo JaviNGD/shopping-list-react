@@ -1,8 +1,21 @@
+.App {
+  text-align: center;
+  font-family: Poppins, sans-serif;
+}
+
 .Panels {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 70vh;
   width: 100%;
-  margin-top: 5%;
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }

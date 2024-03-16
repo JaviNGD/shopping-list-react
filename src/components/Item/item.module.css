@@ -1,3 +1,6 @@
+.itemContainer{
+    width: 100%;
+}
 
 .itemContainer li {
     background-color: #ffffff;
@@ -39,6 +42,7 @@
 
 .yes {
     text-decoration: line-through;
+    opacity: 0.6;
 }
 
 .no {
