@@ -20,11 +20,21 @@
 }
 
 .itemContainer span {
-    font-size: 1.5em;
-    font-weight: 500;
     color: #000;
     margin: 0.4em 0.5em 0;
+    border: 0;
+    background-color: transparent;
     cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.itemContainer .editBtn:hover {
+    color: rgb(28, 145, 53);
+}
+
+.itemContainer .deleteBtn:hover {
+    color: red;
 }
 
 .yes {

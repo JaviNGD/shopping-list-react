@@ -16,19 +16,36 @@ const defaultList = [
 ]
 
 export default function Panel2() {
+
+    // Group the items by category
+    const groupedItems = defaultList.reduce((acc, item) => {
+        acc[item.category] = acc[item.category] || [];
+        acc[item.category].push(item);
+        return acc;
+    }, {});
+
     return (
         <div className={css.container2}>
             <Search />
             <Filter />
             <List>
-                {defaultList.map(item => (
-                <Item
-                    key={item.text} 
-                    text={item.text}
-                    category={item.category}
-                    completed={item.completed}
-                />
-                ))}
+                {Object.keys(groupedItems).map((category, index) => {
+                    return (
+                        <div key={index}>
+                            <h2>{category}</h2>
+                            {groupedItems[category].map((item, index) => {
+                                return (
+                                    <Item 
+                                        key={index} 
+                                        text={item.text} 
+                                        category={item.category} 
+                                        completed={item.completed} 
+                                    />
+                                )
+                            })}
+                        </div>
+                    )
+                })}
             </List>
         </div>
     )
