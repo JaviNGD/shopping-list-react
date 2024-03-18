@@ -1,13 +1,8 @@
 import React from 'react'
 import css from './search.module.css'
-import { useState, useEffect } from 'react'
 
-export default function Search() {
-    const [searchValue, setSearch] = useState('');
+export default function Search({searchValue, setSearch}) {
 
-    useEffect(() => {
-        console.log('searchValue', searchValue)
-    }, [searchValue])
 
     return (
         <div className={css.search}>

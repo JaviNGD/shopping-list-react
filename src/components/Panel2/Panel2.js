@@ -4,22 +4,23 @@ import { List } from '../List/List';
 import { Item } from '../Item/Item';
 import { Search } from '../Search/Search';
 import { Filter } from '../Filter/Filter';
+import { useState } from 'react'
 
-// Define a default shopping list
-const defaultList = [
-    {text: 'Milk', category: 'Dairy', completed: true},
-    {text: 'Eggs', category: 'Dairy', completed: false},
-    {text: 'Bread', category: 'Bread & Bakery', completed: false},
-    {text: 'Chicken', category: 'Meat', completed: false},
-    {text: 'Beef', category: 'Meat', completed: false},
-    {text: 'Apples', category: 'Fruits', completed: true},
-]
+export default function Panel2({ items, setItems }) {
+    const [searchValue, setSearch] = useState('');
+    
+    // Filter the items based on the search value ignoring accents and case sensitivity
+    const searchedItems = items.filter(item =>
+        removeAccents(item.text.toLowerCase()).includes(removeAccents(searchValue.toLowerCase()))
+    );
 
-export default function Panel2() {
-
+    // Remove accents from a string
+    function removeAccents(str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
 
     // Group the items by category
-    const groupedItems = defaultList.reduce((acc, item) => {
+    const groupedItems = searchedItems.reduce((acc, item) => {
         acc[item.category] = acc[item.category] || [];
         acc[item.category].push(item);
         return acc;
@@ -27,7 +28,10 @@ export default function Panel2() {
 
     return (
         <div className={css.container2}>
-            <Search />
+            <Search 
+                searchValue={searchValue} 
+                setSearch={setSearch}
+            />
             <Filter />
             <List>
                 {Object.keys(groupedItems).map((category, index) => {
