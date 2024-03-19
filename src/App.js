@@ -17,6 +17,7 @@ const defaultList = [
 
 function App() {
   const [items, setItems] = useState(defaultList); //useState([])
+
   return (
     <div className="App"> 
       <Navbar />

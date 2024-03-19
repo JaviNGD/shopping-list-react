@@ -5,9 +5,14 @@ import { Item } from '../Item/Item';
 import { Search } from '../Search/Search';
 import { Filter } from '../Filter/Filter';
 import { useState } from 'react'
+import { ProgressMobile } from '../ProgressMobile/ProgressMobile';
 
 export default function Panel2({ items, setItems }) {
     const [searchValue, setSearch] = useState('');
+
+    // Count the number of completed items and the total number of items
+    const completed = items.filter(item => item.completed).length;
+    const total = items.length;
     
     // Filter the items based on the search value ignoring accents and case sensitivity
     const searchedItems = items.filter(item =>
@@ -26,8 +31,20 @@ export default function Panel2({ items, setItems }) {
         return acc;
     }, {});
 
+    // Mark an item as completed
+    const toggleCompleted = (text) => {
+        const listIndex = items.findIndex(item => item.text === text);
+        const newList = [...items];
+        newList[listIndex].completed = !newList[listIndex].completed;
+        setItems(newList);
+    }
+
     return (
         <div className={css.container2}>
+            <ProgressMobile 
+                completed={completed} 
+                total={total}
+            />
             <Search 
                 searchValue={searchValue} 
                 setSearch={setSearch}
@@ -45,6 +62,9 @@ export default function Panel2({ items, setItems }) {
                                         text={item.text} 
                                         category={item.category} 
                                         completed={item.completed} 
+                                        onCompleted={() => toggleCompleted(item.text)}
+                                        onEdit={() => console.log('click edit')}
+                                        onDelete={() => console.log('click delete')}
                                     />
                                 )
                             })}

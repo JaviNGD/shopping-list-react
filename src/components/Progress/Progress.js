@@ -6,7 +6,7 @@ export default function Progress({ completed, total }) {
         <div className={css.progress}>
             <h2>Progress</h2>
             <p>{`Items: ${completed} / ${total}`}</p>
-
+            
         </div>
     )
 }
