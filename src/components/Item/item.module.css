@@ -9,7 +9,7 @@
     display: inline-flex;
     justify-content: space-between;
     cursor: pointer;
-    width: 100%;
+    width: 70%;
 }
 
 .itemContainer li:hover {
@@ -22,33 +22,33 @@
     font-weight: 600;
 }
 
-.itemContainer span {
+.itemContainer .icons {
     color: #000;
-    margin: 0.4em 0.5em 0;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
+    padding: 0.5em 0.6em;
+    margin-left: 0.3em;
+    background-color: #ffffff;
     font-size: 1.5em;
     font-weight: 500;
+    border-radius: 1em;
 }
 
 .itemContainer .editBtn:hover {
     color: rgb(28, 145, 53);
+    cursor: pointer;
 }
 
 .itemContainer .deleteBtn:hover {
     color: red;
+    cursor: pointer;
 }
 
 .yes {
     text-decoration: line-through;
     opacity: 0.6;
+    font-weight: 500;
 }
 
 .no {
     text-decoration: none;
 }
 
-.itemContainer .yes {
-    font-weight: 500;
-}

@@ -9,17 +9,17 @@ export default function Item({ text, category, completed, onCompleted, onEdit, o
         <div className={css.itemContainer}>
             <li onClick={(onCompleted)}>
                 <p className={completed ? css.yes : css.no}>{text}</p>
-                <span>
-                    <FaEdit 
-                        className={css.editBtn}
-                        onClick={onEdit}
-                    /> 
-                    <MdDeleteForever 
-                        className={css.deleteBtn}
-                        onClick={onDelete}    
-                    />
-                </span>
             </li>
+            <span className={css.icons}>
+                <FaEdit 
+                    className={css.editBtn}
+                    onClick={onEdit}
+                /> 
+                <MdDeleteForever 
+                    className={css.deleteBtn}
+                    onClick={onDelete}    
+                />
+            </span>
         </div>
     )
 }

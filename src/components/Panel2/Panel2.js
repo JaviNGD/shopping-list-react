@@ -39,6 +39,12 @@ export default function Panel2({ items, setItems }) {
         setItems(newList);
     }
 
+    // Delete an item 
+    const deleteItem = (text) => {
+        const newList = items.filter(item => item.text !== text);
+        setItems(newList);
+    }
+
     return (
         <div className={css.container2}>
             <ProgressMobile 
@@ -64,7 +70,7 @@ export default function Panel2({ items, setItems }) {
                                         completed={item.completed} 
                                         onCompleted={() => toggleCompleted(item.text)}
                                         onEdit={() => console.log('click edit')}
-                                        onDelete={() => console.log('click delete')}
+                                        onDelete={() => deleteItem(item.text)}
                                     />
                                 )
                             })}
