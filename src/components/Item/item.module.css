@@ -22,6 +22,11 @@
     font-weight: 600;
 }
 
+.itemContainer .check {
+    margin-right: 1em;
+    margin-left: 0.5em;
+}
+
 .itemContainer .icons {
     color: #000;
     padding: 0.5em 0.6em;
@@ -48,7 +53,15 @@
     font-weight: 500;
 }
 
+.yes .check {
+    color: rgb(28, 145, 53);
+}
+
 .no {
     text-decoration: none;
+}
+
+.no .check {
+    color: gray;
 }
 

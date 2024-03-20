@@ -36,14 +36,21 @@ export default function Panel2({ items, setItems }) {
         const listIndex = items.findIndex(item => item.text === text);
         const newList = [...items];
         newList[listIndex].completed = !newList[listIndex].completed;
-        setItems(newList);
+        saveList(newList);
     }
 
     // Delete an item 
     const deleteItem = (text) => {
         const newList = items.filter(item => item.text !== text);
+        saveList(newList);
+    }
+
+    // Save the items to the local storage
+    const saveList = (newList) => {
+        localStorage.setItem('ShoppingList', JSON.stringify(newList));
         setItems(newList);
     }
+
 
     return (
         <div className={css.container2}>
