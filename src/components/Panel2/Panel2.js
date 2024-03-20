@@ -7,7 +7,7 @@ import { Filter } from '../Filter/Filter';
 import { useState } from 'react'
 import { ProgressMobile } from '../ProgressMobile/ProgressMobile';
 
-export default function Panel2({ items, setItems }) {
+export default function Panel2({ items, saveList }) {
     const [searchValue, setSearch] = useState('');
 
     // Count the number of completed items and the total number of items
@@ -42,13 +42,7 @@ export default function Panel2({ items, setItems }) {
     // Delete an item 
     const deleteItem = (text) => {
         const newList = items.filter(item => item.text !== text);
-        saveList(newList);
-    }
-
-    // Save the items to the local storage
-    const saveList = (newList) => {
-        localStorage.setItem('ShoppingList', JSON.stringify(newList));
-        setItems(newList);
+        saveList(newList); // Utiliza saveList en lugar de saveItems
     }
 
 

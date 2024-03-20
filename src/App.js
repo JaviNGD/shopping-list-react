@@ -1,21 +1,11 @@
-import { useState } from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar/Navbar';
 import { Panel1 } from './components/Panel1/Panel1';
 import { Panel2 } from './components/Panel2/Panel2';
+import { useLocalStorage } from './Hooks/useLocalStorage';
 
 function App() {
-  const localStorageList = localStorage.getItem('ShoppingList');
-  let parsedList = [];
-
-  if (!localStorageList) {
-    localStorage.setItem('ShoppingList', JSON.stringify([]));
-    parsedList = [];
-  } else {
-    parsedList = JSON.parse(localStorageList);
-  }
-
-  const [items, setItems] = useState(parsedList);
+  const [items, saveItems] = useLocalStorage('ShoppingList', []);
 
   return (
     <div className="App"> 
@@ -24,11 +14,11 @@ function App() {
         <div className='Panels'>
           <Panel1 
             items={items}
-            setItems={setItems}
+            saveItems={saveItems}
           />
           <Panel2 
             items={items}
-            setItems={setItems}
+            saveList={saveItems}
           />
         </div>
     </div>
