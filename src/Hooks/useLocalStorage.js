@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function useLocalStorage (ShoppingList, initialValue) {
-    const localStorageList = localStorage.getItem(ShoppingList);
-    let parsedList;
+    const [items, setItems] = useState(initialValue);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
-    if (!localStorageList) {
-        localStorage.setItem(ShoppingList, JSON.stringify(initialValue));
-        parsedList = initialValue;
-    } else {
-        parsedList = JSON.parse(localStorageList);
-    }
-    
-    const [items, setItems] = useState(parsedList);
+    useEffect(() => {
+        try {
+            const localStorageList = localStorage.getItem(ShoppingList);
+            let parsedList;
+
+            if (!localStorageList) {
+                localStorage.setItem(ShoppingList, JSON.stringify(initialValue));
+                parsedList = initialValue;
+        } else {
+            parsedList = JSON.parse(localStorageList);
+            saveList(parsedList);
+        }
+        setLoading(false);
+        } 
+        catch (error) {
+            setLoading(false);
+            setError(true);
+        }
+    }, []);
     
     // Save the items to the local storage
     const saveList = (newList) => {
@@ -19,7 +31,7 @@ function useLocalStorage (ShoppingList, initialValue) {
         setItems(newList);
     }
     
-    return [items, saveList];
+    return {items, saveList, loading, error};
 }
 
 export { useLocalStorage };

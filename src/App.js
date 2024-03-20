@@ -2,10 +2,10 @@ import './App.css';
 import { Navbar } from './components/Navbar/Navbar';
 import { Panel1 } from './components/Panel1/Panel1';
 import { Panel2 } from './components/Panel2/Panel2';
-import { useLocalStorage } from './Hooks/useLocalStorage';
+import { useLocalStorage } from './hooks/useLocalStorage'
 
 function App() {
-  const [items, saveItems] = useLocalStorage('ShoppingList', []);
+  const {items, saveList, loading, error} = useLocalStorage('ShoppingList', []);
 
   return (
     <div className="App"> 
@@ -14,11 +14,13 @@ function App() {
         <div className='Panels'>
           <Panel1 
             items={items}
-            saveItems={saveItems}
+            saveList={saveList}
           />
           <Panel2 
             items={items}
-            saveList={saveItems}
+            saveList={saveList}
+            loading={loading}
+            error={error}
           />
         </div>
     </div>

@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 100%;
+}
+
+.container h1 {
+    margin: 5px 0 5px 0;
+    color: black;
+}
+
+.container img {
+    width: 100px;
+    height: 100px;
+    margin: 5px 0 5px 0;
+}

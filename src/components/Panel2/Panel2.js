@@ -6,8 +6,11 @@ import { Search } from '../Search/Search';
 import { Filter } from '../Filter/Filter';
 import { useState } from 'react'
 import { ProgressMobile } from '../ProgressMobile/ProgressMobile';
+import { Loading } from '../Loading/Loading';
+import { Error } from '../Error/Error';
+import { Empty } from '../Empty/Empty';
 
-export default function Panel2({ items, saveList }) {
+export default function Panel2({ items, saveList, loading, error }) {
     const [searchValue, setSearch] = useState('');
 
     // Count the number of completed items and the total number of items
@@ -58,6 +61,10 @@ export default function Panel2({ items, saveList }) {
             />
             <Filter />
             <List>
+                {loading && <Loading />}
+                {error && <Error />}
+                {items.length === 0 && !loading && !error && <Empty />}
+
                 {Object.keys(groupedItems).map((category, index) => {
                     return (
                         <div key={index}>
