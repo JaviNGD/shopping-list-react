@@ -7,9 +7,17 @@
     padding: 0.3em 0.6em;
     margin-top: 0.6em;
     display: inline-flex;
-    justify-content: space-between;
     cursor: pointer;
-    width: 70%;
+    width: 80%;
+}
+
+.itemContainer .icons {
+    color: #000;
+    padding: 0.4em 0.3em 0.7em;
+    background-color: #ffffff;
+    font-size: 1.5em;
+    font-weight: 500;
+    border-radius: 0 1em 1em 0;
 }
 
 .itemContainer li:hover {
@@ -25,16 +33,6 @@
 .itemContainer .check {
     margin-right: 1em;
     margin-left: 0.5em;
-}
-
-.itemContainer .icons {
-    color: #000;
-    padding: 0.5em 0.6em;
-    margin-left: 0.3em;
-    background-color: #ffffff;
-    font-size: 1.5em;
-    font-weight: 500;
-    border-radius: 1em;
 }
 
 .itemContainer .editBtn:hover {
