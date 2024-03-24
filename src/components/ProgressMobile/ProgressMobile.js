@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { reactContext } from '../ReactContext/ReactContext';
 import css from './progressMobile.module.css'
 
-export default function ProgressMobile({ completed, total }) {
+export default function ProgressMobile() {
+    const { completed, total } = useContext(reactContext);
+
     return (
         <div className={css.progressMobile}>
             {total === completed ? (
