@@ -1,37 +1,43 @@
 .navbar {
-    overflow: hidden; 
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 500;
 }
 
-.navbar ul {
+.left ul, .right ul {
     display: flex;
     align-items: center;
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
     padding: 0;
-    overflow: hidden;
+    margin: 20px;
 }
 
-.navbar li {
-    padding: 10px;
-    margin: 10px;
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #fff;
+.left ul li, .right ul li {
+    margin: 0 20px;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: #fff;
+.left {
+    display: flex;
 }
 
-.navbar a:hover {
-    color: aliceblue;
+.left .icon {
+    color: white;
 }
 
-.navbar h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #fff;
+.right {
+    display: flex;
+}
+
+.icon:hover {
+    cursor: pointer;
+    color: rgb(209, 239, 247);
+}
+
+.navbar li:hover {
+    cursor: pointer;
+    color: rgb(209, 239, 247);
 }

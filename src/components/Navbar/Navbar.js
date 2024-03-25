@@ -8,12 +8,18 @@ import { FaLinkedin } from "react-icons/fa";
 export default function Navbar() {
     return (
         <nav className={css.navbar}>
-            <ul>
-                <li><a href='https://github.com/JaviNGD' target='_blank' rel="noreferrer"><DiGithubBadge /></a></li>
-                <li><a href='https://www.linkedin.com/in/JaviNGD' target='_blank' rel="noreferrer"><FaLinkedin /></a></li>
-                <li><LanguageSelector /></li>
-                <li><DarkMode /></li>
-            </ul>
+            <div className={css.left}>
+                <ul>
+                    <li><a href='https://github.com/JaviNGD' target='_blank' rel="noreferrer"><DiGithubBadge className={css.icon}/></a></li>
+                    <li><a href='https://www.linkedin.com/in/JaviNGD' target='_blank' rel="noreferrer"><FaLinkedin className={css.icon}/></a></li>
+                </ul>
+            </div>
+            <div className={css.right}>
+                <ul>
+                    <li><LanguageSelector /></li>
+                    <li><DarkMode /></li>
+                </ul>
+            </div>
         </nav>
     )
 }

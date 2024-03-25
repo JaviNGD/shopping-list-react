@@ -1,9 +1,32 @@
 .progressMobile {
     display: none;
+    width: 80%;
+    margin: 0;
 }
 
 @media (max-width: 850px) {
     .progressMobile {
         display: block;
     }
+}
+
+.progressMobile h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0; 
+    border-radius: 10px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #3e98c7; 
+    border-radius: 10px;
+    transition: width 0.5s ease; 
 }
