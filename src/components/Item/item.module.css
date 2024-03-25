@@ -62,3 +62,12 @@
     color: gray;
 }
 
+@media (max-width: 850px) {
+    .itemContainer li {
+        padding: 0 0 0 1em;
+    }
+
+    .itemContainer .icons {
+        padding: 0.2em 0.1em 0.5em;
+    }
+}

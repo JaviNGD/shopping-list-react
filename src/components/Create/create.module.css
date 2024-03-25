@@ -10,6 +10,7 @@
     font-size: 1em;
     border: 1px solid #d1d3d4;
     padding: 0.8em 0.5em;
+    width: 100%;
     color: #111111;
     font-weight: 500;
     border-radius: 5px;
@@ -21,6 +22,7 @@
 }
 
 .create select {
+    width: 100%;
     font-size: 1em;
     margin: 10px 0;
     padding: 10px;
@@ -36,11 +38,11 @@
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     font-size: 1em;
-    background-color: #5292ec;
-    color: #ffffff;
+    background-color: #4CAF50;
+    color: white;
     outline: none;
     border: none;
-    border-radius: 0.3em;
+    border-radius: 40px;
     cursor: pointer;
     padding: 0.8em 1.5em;
     width: 50%;

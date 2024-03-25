@@ -1,0 +1,88 @@
+* {
+    font-family: Poppins, sans-serif;
+}
+
+.container {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .container {
+        display: block;
+    }
+}
+
+.container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 50px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 40px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+}
+
+.formMobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgb(215, 224, 233);
+    padding: 20px;
+    border-radius: 20px;
+    border: 10px solid rgb(118, 200, 206);
+}
+
+.formMobile label {
+    font-weight: bold;
+    color: black;
+    margin: 10px 0;
+}
+
+.formMobile input {
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+}
+
+.formMobile input:focus {
+    border: 1px solid #0b87ff;
+}
+
+.formMobile select {
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+}
+
+.formMobile select:focus {
+    border: 1px solid #0b87ff;
+}
+
+button {
+    margin: 0 15px;
+    outline: none;
+    padding: 5px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.addBtn {
+    background-color: #4CAF50;
+}
+
+.closeBtn {
+    background-color: #f44336;
+}
+

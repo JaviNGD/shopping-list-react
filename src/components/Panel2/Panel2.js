@@ -9,6 +9,7 @@ import { Error } from '../Error/Error';
 import { Empty } from '../Empty/Empty';
 import { Filter } from '../Filter/Filter';
 import { reactContext } from '../ReactContext/ReactContext'; 
+import { CreateMobile } from '../CreateMobile/CreateMobile';
 
 export default function Panel2() {
     const {
@@ -17,7 +18,7 @@ export default function Panel2() {
         deleteItem,
         loading,
         error,
-        items,
+        items
     } = useContext(reactContext); // Use the useContext hook to consume the context
     return (
         <div className={css.container2}>
@@ -49,7 +50,8 @@ export default function Panel2() {
                     );
                 })}
             </List>
-            <Filter />
+            <CreateMobile />
+            
         </div>
     );
 }

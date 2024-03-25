@@ -7,6 +7,7 @@ const reactContext = React.createContext();
 function AppProvider({ children }) {
     const {items, saveList, loading, error} = useLocalStorage('ShoppingList', []);
     const [searchValue, setSearch] = useState('');
+    const [openModal, setOpenModal] = useState(false);
 
     // Count the number of completed items and the total number of items
     const completed = items.filter(item => item.completed).length;
@@ -43,8 +44,18 @@ function AppProvider({ children }) {
         saveList(newList); 
     }
 
+    // Toggle modal
+    const toggleModal = () => {
+        setOpenModal(!openModal);
+    }
 
+    // Add item to the list
+    const addItem = (text, category) => {
+        const newList = [...items, { text, category, completed: false }];
+        saveList(newList);
+    }
 
+    // Return the provider with the context value
     return(
         <reactContext.Provider value={{
             items,
@@ -58,7 +69,11 @@ function AppProvider({ children }) {
             searchedItems,
             groupedItems,
             toggleCompleted,
-            deleteItem
+            deleteItem,
+            openModal,
+            setOpenModal,
+            toggleModal, 
+            addItem
         }}>
             {children}
         </reactContext.Provider>

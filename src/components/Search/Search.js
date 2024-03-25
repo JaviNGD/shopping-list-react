@@ -9,7 +9,7 @@ export default function Search() {
         <div className={css.search}>
             <input 
                 type="text" 
-                placeholder="Search..." 
+                placeholder=" Search..." 
                 value={searchValue}
                 onChange={(e) => setSearch(e.target.value)}
             />
