@@ -5,8 +5,8 @@ import { FaEdit } from "react-icons/fa";
 import { reactContext } from '../ReactContext/ReactContext';
 import { Modal } from '../Modal/Modal';
 
-export default function Item({ text, category, completed, onCompleted, onEdit, onDelete }) {
-    const { toggleItemModal, itemModalOpen, saveList, setItemOpenModal, editItem } = useContext(reactContext);
+export default function Item({ text, category, completed, onCompleted, onDelete }) {
+    const { toggleItemModal, setItemOpenModal, editItem } = useContext(reactContext);
     const [editing, setEditing] = useState(false);
     const [editedText, setEditedText] = useState(text);
 
@@ -58,8 +58,8 @@ export default function Item({ text, category, completed, onCompleted, onEdit, o
                             onChange={handleChange}
                         />
                         <div>
-                            <button type='submit' className={css.editBtn}>Save</button>
-                            <button type='button' onClick={handleCancel} className={css.closeBtn}>Cancel</button>
+                            <button type='submit' className={css.editBtnModal}>Save</button>
+                            <button type='button' onClick={handleCancel} className={css.closeBtnModal}>Cancel</button>
                         </div>
                     </form>
                 </Modal>

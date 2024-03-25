@@ -38,7 +38,7 @@ export default function CreateMobile() {
     
     return (
         <div className={css.container}>
-            <button onClick={(event) => {toggleModal()}}>Create item <FaCartArrowDown /></button>
+            <button onClick={toggleModal}>Create item <FaCartArrowDown /></button>
 
             {/* Render the modal */}
             {openModal && <Modal>

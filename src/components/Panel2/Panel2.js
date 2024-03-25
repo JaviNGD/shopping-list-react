@@ -41,7 +41,6 @@ export default function Panel2() {
                                         category={item.category}
                                         completed={item.completed}
                                         onCompleted={() => toggleCompleted(item.text)}
-                                        onEdit={() => console.log('click edit')}
                                         onDelete={() => deleteItem(item.text)}
                                     />
                                 );

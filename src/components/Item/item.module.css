@@ -113,11 +113,11 @@
     border-radius: 5px;
 }
 
-.editBtn {
+.editBtnModal {
     background-color: #0b87ff;
 }
 
-.closeBtn {
+.closeBtnModal {
     background-color: #f44336;
 }
 
