@@ -7,7 +7,8 @@ const reactContext = React.createContext();
 function AppProvider({ children }) {
     const {items, saveList, loading, error} = useLocalStorage('ShoppingList', []);
     const [searchValue, setSearch] = useState('');
-    const [openModal, setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState(false); // Modal createMobile
+    const [itemModalOpen, setItemModalOpen] = useState(false); // Modal edit item 
 
     // Count the number of completed items and the total number of items
     const completed = items.filter(item => item.completed).length;
@@ -44,14 +45,27 @@ function AppProvider({ children }) {
         saveList(newList); 
     }
 
-    // Toggle modal
+    // Toggle modal createMobile
     const toggleModal = () => {
         setOpenModal(!openModal);
     }
 
+    // Toggle modal edit item
+    const toggleItemModal = () => {
+        setItemModalOpen(!itemModalOpen);
+    };
+
     // Add item to the list
     const addItem = (text, category) => {
         const newList = [...items, { text, category, completed: false }];
+        saveList(newList);
+    }
+
+    // Edit item in the list
+    const editItem = (oldText, newText) => {
+        const listIndex = items.findIndex(item => item.text === oldText);
+        const newList = [...items];
+        newList[listIndex].text = newText;
         saveList(newList);
     }
 
@@ -73,7 +87,10 @@ function AppProvider({ children }) {
             openModal,
             setOpenModal,
             toggleModal, 
-            addItem
+            setItemModalOpen,
+            toggleItemModal,
+            addItem, 
+            editItem
         }}>
             {children}
         </reactContext.Provider>

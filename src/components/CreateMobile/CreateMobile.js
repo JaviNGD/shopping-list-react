@@ -71,7 +71,7 @@ export default function CreateMobile() {
                     </select>
                     <div className={css.buttonsContainer}>
                         <button className={css.addBtn} type='submit'>Add</button>
-                        <button className={css.closeBtn} onClick={onCancel}>Close</button>
+                        <button className={css.closeBtn} onClick={onCancel}>Cancel</button>
                     </div>
                 </form>
             </Modal>}

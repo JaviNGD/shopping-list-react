@@ -71,3 +71,53 @@
         padding: 0.2em 0.1em 0.5em;
     }
 }
+
+.formEdit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgb(215, 224, 233);
+    padding: 20px;
+    border-radius: 20px;
+    border: 10px solid rgb(118, 200, 206);
+}
+
+.formEdit label {
+    font-weight: bold;
+    color: black;
+    margin: 10px 0;
+}
+
+.formEdit input {
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.formEdit input:focus {
+    border: 1px solid #0b87ff;
+}
+
+.formEdit button {
+    margin: 0 15px;
+    outline: none;
+    padding: 5px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.editBtn {
+    background-color: #0b87ff;
+}
+
+.closeBtn {
+    background-color: #f44336;
+}
+
