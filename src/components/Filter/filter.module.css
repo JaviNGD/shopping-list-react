@@ -1,0 +1,21 @@
+.filter {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.filter button {
+    background-color: #3e98c7; 
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter button:hover {
+    background-color: #2f6784; 
+}
+
+.filter .selected {
+    background-color: #2f6784; 
+}

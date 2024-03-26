@@ -20,6 +20,7 @@ export default function Panel2() {
         error,
         items
     } = useContext(reactContext); // Use the useContext hook to consume the context
+    
     return (
         <div className={css.container2}>
             <ProgressMobile />
