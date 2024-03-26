@@ -7,6 +7,7 @@ const reactContext = React.createContext();
 function AppProvider({ children }) {
     const {items, saveList, loading, error} = useLocalStorage('ShoppingList', []);
     const [searchValue, setSearch] = useState('');
+    const [itemFilterStatus, setItemFilterStatus] = useState('');
     const [openModal, setOpenModal] = useState(false); // Modal createMobile
     const [itemModalOpen, setItemModalOpen] = useState(false); // Modal edit item 
 
@@ -15,9 +16,10 @@ function AppProvider({ children }) {
     const total = items.length;
     
     // Filter the items based on the search value ignoring accents and case sensitivity
-    const searchedItems = items.filter(item =>
-        removeAccents(item.text.toLowerCase()).includes(removeAccents(searchValue.toLowerCase()))
-    );
+    const searchedItems = items.filter(item => {
+        let itemStatus = itemFilterStatus === "" ? true : item.completed === itemFilterStatus;
+        return removeAccents(item.text.toLowerCase()).includes(removeAccents(searchValue.toLowerCase())) && itemStatus;
+    });
 
     // Remove accents from a string
     function removeAccents(str) {
@@ -90,7 +92,9 @@ function AppProvider({ children }) {
             setItemModalOpen,
             toggleItemModal,
             addItem, 
-            editItem
+            editItem,
+            itemFilterStatus,
+            setItemFilterStatus
         }}>
             {children}
         </reactContext.Provider>

@@ -20,13 +20,10 @@ export default function Progress() {
                     strokeLinecap: 'round',
                 
                     // Text size
-                    textSize: '16px',
+                    textSize: '12px',
                 
                     // How long animation takes to go from one percentage to another, in seconds
                     pathTransitionDuration: 0.5,
-                
-                    // Can specify path transition in more detail, or remove it entirely
-                    // pathTransition: 'none',
                 
                     // Colors
                     pathColor: `rgba(62, 152, 199, ${progress / 100})`,

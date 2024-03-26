@@ -7,7 +7,6 @@ import { ProgressMobile } from '../ProgressMobile/ProgressMobile';
 import { Loading } from '../Loading/Loading';
 import { Error } from '../Error/Error';
 import { Empty } from '../Empty/Empty';
-import { Filter } from '../Filter/Filter';
 import { reactContext } from '../ReactContext/ReactContext'; 
 import { CreateMobile } from '../CreateMobile/CreateMobile';
 
@@ -25,7 +24,6 @@ export default function Panel2() {
         <div className={css.container2}>
             <ProgressMobile />
             <Search />
-            <Filter />
             <List>
                 {loading && <Loading />}
                 {error && <Error />}
