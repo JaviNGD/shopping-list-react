@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import css from './search.module.css';
 import { reactContext } from '../ReactContext/ReactContext';
 
