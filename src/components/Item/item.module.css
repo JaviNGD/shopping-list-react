@@ -1,9 +1,19 @@
 .itemContainer{
     width: 100%;
+    animation: fadeIn 0.8s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .itemContainer li {
-    background-color: #ffffff;
     padding: 0.3em 0.6em;
     margin-top: 0.6em;
     display: inline-flex;
@@ -11,16 +21,38 @@
     width: 80%;
 }
 
+.itemLight li {
+    background-color: var(--item-background);
+    color: var(--letters-panel);
+}
+
+.itemDark li {
+    background-color: var(--item-background-dark);
+    color: var(--letters-panel-dark);
+}
+
 .itemContainer .icons {
-    color: #000;
-    padding: 0.4em 0.3em 0.7em;
-    background-color: #ffffff;
+    padding: 0.4em 0.3em 0.67em;
     font-size: 1.5em;
     font-weight: 500;
 }
 
-.itemContainer li:hover {
-    background-color: #f5f5f5;
+.itemLight .icons {
+    background-color: var(--item-background);
+    color: var(--icon-color);
+}
+
+.itemDark .icons {
+    background-color: var(--item-background-dark);
+    color: var(--icon-color-dark);
+}
+
+.itemLight li:hover {
+    background-color: var(--item-hover);
+}
+
+.itemDark li:hover {
+    background-color: var(--item-hover-dark);
 }
 
 .itemContainer  p {
@@ -35,12 +67,12 @@
 }
 
 .itemContainer .editBtn:hover {
-    color: rgb(28, 145, 53);
+    color: var(--icon-edit);
     cursor: pointer;
 }
 
 .itemContainer .deleteBtn:hover {
-    color: red;
+    color: var(--icon-delete);
     cursor: pointer;
 }
 
@@ -50,16 +82,12 @@
     font-weight: 500;
 }
 
-.yes .check {
-    color: rgb(28, 145, 53);
-}
-
 .no {
     text-decoration: none;
 }
 
 .no .check {
-    color: gray;
+    color: var(--input-checked);
 }
 
 @media (max-width: 850px) {
@@ -68,7 +96,7 @@
     }
 
     .itemContainer .icons {
-        padding: 0.2em 0.1em 0.5em;
+        padding: 0.2em 0.1em 0.46em;
     }
 }
 
@@ -78,15 +106,15 @@
     align-items: center;
     flex-direction: column;
     width: 300px;
-    background-color: rgb(215, 224, 233);
     padding: 20px;
     border-radius: 20px;
-    border: 10px solid rgb(118, 200, 206);
+    background-color: var(--modal-background);
+    border: 10px solid var(--modal-border);
 }
 
 .formEdit label {
     font-weight: bold;
-    color: black;
+    color: var(--letters-panel-dark);
     margin: 10px 0;
 }
 
@@ -94,30 +122,29 @@
     width: 80%;
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid var(--input-border);
     outline: none;
     margin-bottom: 20px;
 }
 
 .formEdit input:focus {
-    border: 1px solid #0b87ff;
+    border: 1px solid var(--input-border-focus);
 }
 
 .formEdit button {
     margin: 0 15px;
     outline: none;
     padding: 5px 20px;
-    color: white;
+    color: var(--button-text);
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
 .editBtnModal {
-    background-color: #0b87ff;
+    background-color: var(--button-save);
 }
 
 .closeBtnModal {
-    background-color: #f44336;
+    background-color: var(--button-cancel);
 }
-

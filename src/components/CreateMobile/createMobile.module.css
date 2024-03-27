@@ -13,8 +13,8 @@
 }
 
 .container button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--button-create);
+    color: var(--button-text);
     padding: 14px 50px;
     margin: 8px 0;
     border: none;
@@ -31,15 +31,15 @@
     align-items: center;
     flex-direction: column;
     width: 300px;
-    background-color: rgb(215, 224, 233);
     padding: 20px;
     border-radius: 20px;
-    border: 10px solid rgb(118, 200, 206);
+    background-color: var(--modal-background);
+    border: 10px solid var(--modal-border);
 }
 
 .formMobile label {
     font-weight: bold;
-    color: black;
+    color: var(--panel-letters);
     margin: 10px 0;
 }
 
@@ -47,12 +47,12 @@
     width: 80%;
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid var(--input-border);
     outline: none;
 }
 
 .formMobile input:focus {
-    border: 1px solid #0b87ff;
+    border: 1px solid var(--input-border-focus);
 }
 
 .formMobile select {
@@ -60,29 +60,29 @@
     margin-bottom: 20px;
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid var(--input-border);
     outline: none;
 }
 
 .formMobile select:focus {
-    border: 1px solid #0b87ff;
+    border: 1px solid var(--input-border-focus);
 }
 
 button {
     margin: 0 15px;
     outline: none;
     padding: 5px 20px;
-    color: white;
+    color: var(--button-text);
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
 .addBtn {
-    background-color: #4CAF50;
+    background-color: var(--button-create);
 }
 
 .closeBtn {
-    background-color: #f44336;
+    background-color: var(--button-cancel);
 }
 

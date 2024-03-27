@@ -4,7 +4,7 @@ import { FaCartArrowDown } from 'react-icons/fa';
 import { reactContext } from '../ReactContext/ReactContext';
 
 export default function Create() {
-    const { addItem } = useContext(reactContext);
+    const { addItem, darkMode } = useContext(reactContext);
     const [newItem, setNewItem] = useState('');
     const [selectedCategory, setSelectedCategory] = useState("🍞 Bread & Bakery");
 
@@ -30,7 +30,7 @@ export default function Create() {
     }
 
     return (
-        <div className={css.create}>
+        <div className={`${css.create} ${darkMode ? `${css.createDark}` : `${css.createLight}`}`}>
             <form onSubmit={onSubmit}>
                 <h2>Add new item</h2>
                 <input 

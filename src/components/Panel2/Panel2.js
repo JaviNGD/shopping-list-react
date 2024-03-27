@@ -17,11 +17,12 @@ export default function Panel2() {
         deleteItem,
         loading,
         error,
-        items
+        items,
+        darkMode
     } = useContext(reactContext); // Use the useContext hook to consume the context
     
     return (
-        <div className={css.container2}>
+        <div className={`${css.panel2} ${darkMode ? `${css.p2Dark}` : `${css.p2Light}`}`}>
             <ProgressMobile />
             <Search />
             <List>

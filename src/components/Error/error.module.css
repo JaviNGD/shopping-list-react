@@ -8,7 +8,14 @@
 
 .container h2 {
     margin: 5px 0 5px 0;
-    color: black;
+}
+
+.errorLight h2 {
+    color: var(--letters-panel);
+}
+
+.errorDark h2 {
+    color: var(--letters-panel-dark);
 }
 
 .container img {

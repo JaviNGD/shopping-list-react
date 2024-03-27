@@ -12,6 +12,14 @@
     margin-top: -20px;
 }
 
+.progressLight h2 {
+    color: var(--letters-panel);
+}
+
+.progressDark h2 {
+    color: var(--letters-panel-dark);
+}
+
 .progressCircle {
     width: 70%;
     height: 70%;

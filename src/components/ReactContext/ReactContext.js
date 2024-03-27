@@ -5,11 +5,13 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 const reactContext = React.createContext();
 
 function AppProvider({ children }) {
-    const {items, saveList, loading, error} = useLocalStorage('ShoppingList', []);
-    const [searchValue, setSearch] = useState('');
-    const [itemFilterStatus, setItemFilterStatus] = useState('');
+    const {items, saveList, loading, error} = useLocalStorage('ShoppingList', []); // List of products
+    const [searchValue, setSearch] = useState(''); // Search items
+    const [itemFilterStatus, setItemFilterStatus] = useState(''); // Filter items (All, Completed, Pending)
     const [openModal, setOpenModal] = useState(false); // Modal createMobile
     const [itemModalOpen, setItemModalOpen] = useState(false); // Modal edit item 
+    const [darkMode, setDarkMode] = useState(false); // DarkMode
+    const [selectedFilter, setSelectedFilter] = useState(""); // Add .selected class to filter buttons
 
     // Count the number of completed items and the total number of items
     const completed = items.filter(item => item.completed).length;
@@ -71,6 +73,19 @@ function AppProvider({ children }) {
         saveList(newList);
     }
 
+    // Toggle DarkMode
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
+
+    // Add .selected class to filter buttons and filter items
+    const handleFilterClick = (filterValue) => {
+        if (total !== 0) {
+            setSelectedFilter(filterValue);
+            setItemFilterStatus(filterValue === "All" ? "" : filterValue === "Completed");
+        }
+    };
+
     // Return the provider with the context value
     return(
         <reactContext.Provider value={{
@@ -94,7 +109,11 @@ function AppProvider({ children }) {
             addItem, 
             editItem,
             itemFilterStatus,
-            setItemFilterStatus
+            setItemFilterStatus,
+            darkMode,
+            toggleDarkMode,
+            handleFilterClick,
+            selectedFilter
         }}>
             {children}
         </reactContext.Provider>

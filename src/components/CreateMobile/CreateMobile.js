@@ -22,6 +22,7 @@ export default function CreateMobile() {
         }
     }
 
+    // close modal, clean input
     const onCancel = () => {
         toggleModal();
         setNewItem('');
@@ -32,6 +33,7 @@ export default function CreateMobile() {
         setNewItem(event.target.value);
     }
 
+    // Handle category change
     const onCategoryChange = (event) => {
         setSelectedCategory(event.target.value);
     }

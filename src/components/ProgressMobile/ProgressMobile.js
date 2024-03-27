@@ -3,11 +3,11 @@ import { reactContext } from '../ReactContext/ReactContext';
 import css from './progressMobile.module.css'
 
 export default function ProgressMobile() {
-    const { completed, total } = useContext(reactContext);
+    const { completed, total, darkMode } = useContext(reactContext);
     const progress = total === 0 ? 0 : Math.floor((completed / total) * 100);
 
     return (
-        <div className={css.progressMobile}>
+        <div className={`${css.progressMobile} ${darkMode ? `${css.pMobileDark}` : `${css.pMobileLight}`}`}>
             {total === completed ? (
                 <h3>All items have been completed</h3>
             ) : (

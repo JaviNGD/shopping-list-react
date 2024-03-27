@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import css from './search.module.css'
+import React, { useContext, useState } from 'react';
+import css from './search.module.css';
 import { reactContext } from '../ReactContext/ReactContext';
 
 export default function Search() {
-    const { searchValue, setSearch, total, setItemFilterStatus } = useContext(reactContext);
+    const { searchValue, setSearch, handleFilterClick, selectedFilter, darkMode } = useContext(reactContext);
 
     return (
-        <div className={css.containerSearch}>
+        <div className={`${css.containerSearch} ${darkMode ? `${css.searchDark}` : `${css.searchLight}`}`}>
             <div className={css.search}>
                 <input 
                     type="text" 
@@ -17,24 +17,23 @@ export default function Search() {
                 <button>Search</button>
             </div>
             <div className={css.filter}>
-
                 <button 
-                    className={css.allBtn}
-                    onClick={() => total !== 0 && setItemFilterStatus("")}
+                    className={`${css.allBtn} ${selectedFilter === "All" ? css.selected : ""}`}
+                    onClick={() => handleFilterClick("All")}
                 >
                     All
                 </button>
 
                 <button 
-                    className={css.completedBtn}
-                    onClick={() => total !== 0 && setItemFilterStatus(true)}
+                    className={`${css.completedBtn} ${selectedFilter === "Completed" ? css.selected : ""}`}
+                    onClick={() => handleFilterClick("Completed")}
                 >
                     Completed
                 </button>
 
                 <button 
-                    className={css.pendingBtn}
-                    onClick={() => total !== 0 && setItemFilterStatus(false)}
+                    className={`${css.pendingBtn} ${selectedFilter === "Pending" ? css.selected : ""}`}
+                    onClick={() => handleFilterClick("Pending")}
                 >
                     Pending
                 </button>

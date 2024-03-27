@@ -5,34 +5,38 @@ import { FaEdit } from "react-icons/fa";
 import { reactContext } from '../ReactContext/ReactContext';
 import { Modal } from '../Modal/Modal';
 
-export default function Item({ text, category, completed, onCompleted, onDelete }) {
-    const { toggleItemModal, setItemOpenModal, editItem } = useContext(reactContext);
+export default function Item({ text, completed, onCompleted, onDelete }) {
+    const { toggleItemModal, setItemOpenModal, editItem, darkMode } = useContext(reactContext);
     const [editing, setEditing] = useState(false);
     const [editedText, setEditedText] = useState(text);
 
+    // open modal for editing
     const handleEdit = () => {
         setEditing(true);
-        toggleItemModal(); // Abre el modal del ítem
+        toggleItemModal();
     };
 
+    // Handle the input change
     const handleChange = (e) => {
         setEditedText(e.target.value);
     };
 
+    // Save edited item, close modal
     const handleSave = (e) => {
         e.preventDefault();
-        editItem(text, editedText); // Implementa esta función en tu ReactContext para guardar los cambios en el ítem
+        editItem(text, editedText);
         setEditing(false);
         setItemOpenModal(false);
     };
 
+    // Cancel editing, close modal
     const handleCancel = () => {
         setEditing(false);
         setItemOpenModal(false);
     };
 
     return (
-        <div className={css.itemContainer}>
+        <div className={`${css.itemContainer} ${darkMode ? `${css.itemDark}` : `${css.itemLight}`}`}>
             <li onClick={onCompleted}>
                 <p className={completed ? css.yes : css.no}>{text}</p>
             </li>

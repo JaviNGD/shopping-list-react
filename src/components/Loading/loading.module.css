@@ -8,7 +8,14 @@
 
 .container h1 {
     margin: 5px 0 5px 0;
-    color: black;
+}
+
+.loadingLight h1 {
+    color: var(--letters-panel);
+}
+
+.loadingDark h1 {
+    color: var(--letters-panel-dark);
 }
 
 .container img {

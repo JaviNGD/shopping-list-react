@@ -13,17 +13,27 @@
     width: 70%;
 }
 
+.searchLight input{
+    background-color: var(--input-background);
+    color: var(--input-letters);
+}
+
+.searchDark input {
+    background-color: var(--input-background-dark);
+    color: var(--input-letters-dark);
+}
+
 .search input:focus {
     outline: none;
-    border-color: #0b87ff;
+    border-color: var(--input-border-focus);
 }
 
 .search button {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 1em;
-    background-color: #5292ec;
-    color: #ffffff;
+    background-color: var(--search-button);
+    color: var(--button-text);
     outline: none;
     border: none;
     border-radius: 0.3em;
@@ -55,16 +65,23 @@
 }
 
 .filter button {
-    background-color: #3e98c7; 
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 
-.filter button:hover {
-    background-color: #2f6784; 
+.searchLight button {
+    background-color: var(--search-button); 
 }
 
-.filter .selected {
-    background-color: #2f6784; 
+.searchDark button {
+    background-color: var(--search-button-hover);
+}
+
+.searchLight button:hover, .searchLight .selected {
+    background-color: var(--search-button-dark); 
+}
+
+.searchDark button:hover, .searchDark .selected {
+    background-color: var(--search-button-hover-dark);
 }

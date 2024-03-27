@@ -18,7 +18,7 @@
 .progressBar {
     width: 100%;
     height: 20px;
-    background-color: #f0f0f0; 
+    background-color: var(--progress-bar);
     border-radius: 10px;
     margin: 0;
     margin-bottom: 10px;
@@ -26,7 +26,15 @@
 
 .progress {
     height: 100%;
-    background-color: #3e98c7; 
+    background-color: var(--progress); 
     border-radius: 10px;
     transition: width 0.5s ease; 
+}
+
+.pMobileLight h3 {
+    color: var(--letters-panel);
+}
+
+.pMobileDark h3 {
+    color: var(--letters-panel-dark);
 }

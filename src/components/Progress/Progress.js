@@ -4,11 +4,11 @@ import { reactContext } from '../ReactContext/ReactContext';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 export default function Progress() {
-    const {completed, total} = useContext(reactContext);
+    const {completed, total, darkMode} = useContext(reactContext);
     const progress = total === 0 ? 0 : Math.floor((completed / total) * 100);
 
     return (
-        <div className={css.progress}>
+        <div className={`${css.progress} ${darkMode ? `${css.progressDark}` : `${css.progressLight}`}`}>
             <h2>Progress</h2>
             <CircularProgressbar 
                 className={css.progressCircle}
@@ -27,10 +27,10 @@ export default function Progress() {
                 
                     // Colors
                     pathColor: `rgba(62, 152, 199, ${progress / 100})`,
-                    textColor: 'black',
-                    trailColor: '#d6d6d6',
-                    backgroundColor: '#3e98c7',
-                  })}
+                    textColor: darkMode ? 'white' : 'black',
+                    trailColor: 'var(--progress-bar)',
+                    backgroundColor: 'var(--progress)',
+                })}
             />
         </div>
     )

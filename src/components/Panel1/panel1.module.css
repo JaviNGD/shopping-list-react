@@ -1,13 +1,12 @@
-.container1 {
+.panel1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 500px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 0 var(--panel-shadow);
     border-radius: 20px;
-    background-color: aliceblue;
     margin: 40px;
     padding: 30px;
     overflow-y: auto; 
@@ -15,7 +14,17 @@
 
 /* Hide Panel 1*/
 @media (max-width: 850px) {
-    .container1 {
+    .panel1 {
         display: none;
     }
+}
+
+.p1Light {
+    background-color: var(--panel-background);
+    transition: background-color 0.3s ease;
+}
+
+.p1Dark {
+    background-color: var(--panel-background-dark);
+    transition: background-color 0.3s ease;
 }
