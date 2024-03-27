@@ -1,6 +1,7 @@
 {
   "name": "shopping-list-react",
   "version": "0.1.0",
+  "homepage": "https://javingd.github.io/shopping-list-react/",
   "dependencies": {
     "react": "^18",
     "react-circular-progressbar": "^2.1.0",
@@ -11,6 +12,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
