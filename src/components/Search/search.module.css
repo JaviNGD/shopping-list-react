@@ -1,4 +1,4 @@
-.containerSearch, .search {
+.containerSearch, .search, .filter {
     width: 100%;
 }
 
@@ -11,6 +11,7 @@
     font-weight: 500;
     border-radius: 5px;
     width: 70%;
+    margin-bottom: 10px;
 }
 
 .searchLight input{
@@ -47,20 +48,22 @@
     .search input {
         margin: 5px;
         padding: 0.4em 0em;
-        width: 50%;
+        width: 60%;
     }
     
     .search button {
         margin: 5px;
-        padding: 0.4em 0.6em;
+        width: 30%;
+        padding: 0.4em 0.8em;
     }
 }
 
 
 .filter {
     display: flex;
-    justify-content: space-between;
-    margin: 20px;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 1%;
     margin-bottom: 0px;
 }
 
